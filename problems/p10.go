@@ -1,6 +1,8 @@
 package problems
 
-import ()
+import (
+	"github.com/tn5993/projecteuler/utils/simplemath/prime"
+)
 
 type Problem10 struct {
 	limit int
@@ -11,18 +13,11 @@ func NewProblem10(limit int) IProblem {
 }
 
 func (p Problem10) Solve() int64 {
-	primeTable := make([]byte, p.limit+1)
-	for i := 2; i*i <= p.limit; i++ {
-		if primeTable[i] == 0 {
-			for j := i * i; j <= p.limit; j += i {
-				primeTable[j] = 1
-			}
-		}
-	}
+	primeTable := prime.SieveOfE(int64(p.limit))
 
 	sum := 0
 	for i, each := range primeTable {
-		if i > 1 && each == 0 {
+		if i > 1 && !each {
 			sum += i
 		}
 	}

@@ -12,7 +12,7 @@ type Problem19 struct {
 }
 
 func (p Problem19) Solve() int64 {
-	counter := 0
+	var counter int64 = 0
 	for y := 1901; y <= 2000; y++ {
 		for m := 1; m <= 12; m++ {
 			if calendar.GetDayOfWeek(m, 1, y) == 0 {
@@ -21,5 +21,5 @@ func (p Problem19) Solve() int64 {
 		}
 	}
 
-	return int64(counter)
+	return counter
 }

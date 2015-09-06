@@ -25,6 +25,7 @@ func main() {
 		18: probs.NewProblem18("files/p18.txt"),
 		19: probs.NewProblem19(),
 		20: probs.NewProblem20(100),
+		21: probs.NewProblem21(10000),
 	}
 	fmt.Printf("=============\n| Problem %d |\n=============\n", probNum)
 	solveProblem(m[probNum])
