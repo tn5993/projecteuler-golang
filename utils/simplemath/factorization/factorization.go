@@ -1,60 +1,34 @@
 package factorization
 
-import (
-	"github.com/tn5993/projecteuler/utils/simplemath/prime"
-	"math/big"
-)
+import ()
 
-func DivisorsOf(n int64) int64 {
-	primes := prime.GetPrimesUnder(n)
-	var i, sum, product int64 = 0, 0, 1
-	for n > 1 {
-		if n%primes[i] == 0 {
-			sum += 1
-			n = n / primes[i]
-		} else {
-			product *= (sum + 1)
-			i += 1
-			sum = 0
+func DivisorsCount(n int64) int64 {
+	var result, k int64 = 1, n
+	for i := int64(2); i <= k; i++ {
+		var p int64 = 0
+		for k%i == 0 {
+			p++
+			k /= i
 		}
+		result *= (p + 1)
 	}
-
-	product *= (sum + 1)
-	return product
+	return result
 }
 
-/*
-http://mathschallenge.net/library/number/sum_of_divisors
-*/
 func DivisorSum(n int64) int64 {
 	if n == 1 {
 		return 1
 	}
+	var sum int64 = 1
+	var k int64 = n
 
-	original := n
-	primes := prime.GetPrimesUnder(n)
-	var i, count, product int64 = 0, 1, 1
-	expInt := new(big.Int)
-	for n > 1 {
-		if n%primes[i] == 0 {
-			count += 1
-			n = n / primes[i]
-		} else {
-			if count > 1 {
-				upper := expInt.Exp(big.NewInt(primes[i]), big.NewInt(count), nil).Int64() - 1
-				product *= (upper / (primes[i] - 1))
-			}
-			count = 1
-			i += 1
+	for i := int64(2); i <= k; i++ {
+		var p int64 = 1
+		for k%i == 0 {
+			p *= i
+			k /= i
 		}
+		sum *= (p*i - 1) / (i - 1)
 	}
-
-	if count > 1 {
-		upper := expInt.Exp(big.NewInt(primes[i]), big.NewInt(count), nil).Int64() - 1
-		product *= upper / (primes[i] - 1)
-	}
-
-	product -= original
-
-	return product
+	return sum - n
 }

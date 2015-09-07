@@ -24,7 +24,7 @@ func (p Problem12) Solve() int64 {
 		if num2%2 == 0 {
 			num2 = num2 / 2
 		}
-		if factor.DivisorsOf(int64(num1))*factor.DivisorsOf(int64(num2)) >= 500 {
+		if factor.DivisorsCount(int64(num1))*factor.DivisorsCount(int64(num2)) >= 500 {
 			break
 		} else {
 			n += 1

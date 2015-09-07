@@ -11,18 +11,18 @@ var _ = Describe("Factorization", func() {
 	Describe("Test Factization Package", func() {
 		Context("Number of divisors of 28", func() {
 			It("should be 6 (1,2,4,7,14,28)", func() {
-				Ω(DivisorsOf(28)).Should(Equal(int64(6)))
+				Ω(DivisorsCount(28)).Should(Equal(int64(6)))
 			})
 		})
 
 		Context("Number of divisors of 21, 15, 10, 6", func() {
 			It("should be the following", func() {
-				Ω(DivisorsOf(21)).To(Equal(int64(4)))
-				Ω(DivisorsOf(15)).To(Equal(int64(4)))
-				Ω(DivisorsOf(10)).To(Equal(int64(4)))
-				Ω(DivisorsOf(6)).To(Equal(int64(4)))
-				Ω(DivisorsOf(3)).To(Equal(int64(2)))
-				Ω(DivisorsOf(1)).To(Equal(int64(1)))
+				Ω(DivisorsCount(21)).To(Equal(int64(4)))
+				Ω(DivisorsCount(15)).To(Equal(int64(4)))
+				Ω(DivisorsCount(10)).To(Equal(int64(4)))
+				Ω(DivisorsCount(6)).To(Equal(int64(4)))
+				Ω(DivisorsCount(3)).To(Equal(int64(2)))
+				Ω(DivisorsCount(1)).To(Equal(int64(1)))
 			})
 		})
 
