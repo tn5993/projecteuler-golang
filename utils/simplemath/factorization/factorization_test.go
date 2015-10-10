@@ -28,7 +28,7 @@ var _ = Describe("Factorization", func() {
 
 		Context("Divisor Sum of 1, 3, 6, 10, 15, 21, 28", func() {
 			It("should be the following", func() {
-				Ω(DivisorSum(1)).To(Equal(int64(1)))
+				Ω(DivisorSum(1)).To(Equal(int64(0)))
 				Ω(DivisorSum(3)).To(Equal(int64(1)))
 				Ω(DivisorSum(6)).To(Equal(int64(6)))
 				Ω(DivisorSum(10)).To(Equal(int64(8)))

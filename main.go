@@ -3,13 +3,14 @@ package main
 import (
 	"flag"
 	"fmt"
-	probs "github.com/tn5993/projecteuler/problems"
 	"time"
+
+	probs "github.com/tn5993/projecteuler/problems"
 )
 
 func main() {
 	var probNum int
-	flag.IntVar(&probNum, "problem", 9, "a problem number")
+	flag.IntVar(&probNum, "problem", 8, "a problem number")
 	flag.Parse()
 	m := map[int]probs.IProblem{
 		8:  probs.NewProblem8("files/p8.txt"),
@@ -27,6 +28,9 @@ func main() {
 		20: probs.NewProblem20(100),
 		21: probs.NewProblem21(10000),
 		22: probs.NewProblem22("files/p22.txt"),
+		23: probs.NewProblem23(20162),
+		24: probs.NewProblem24(),
+		25: probs.NewProblem25(),
 	}
 	fmt.Printf("=============\n| Problem %d |\n=============\n", probNum)
 	solveProblem(m[probNum])

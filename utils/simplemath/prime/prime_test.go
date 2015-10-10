@@ -11,7 +11,7 @@ var _ = Describe("Prime", func() {
 	Describe("Test Sieve Of E for finding prime numbers less than or equal n", func() {
 		Context("If n <= 1", func() {
 			It("should return nil", func() {
-				Expect(prime.GetPrimesUnder(1)).To(BeNil())
+				Expect(prime.GetPrimesUnder(1)).To(Equal([]int64{}))
 			})
 		})
 

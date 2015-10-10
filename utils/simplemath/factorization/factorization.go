@@ -16,9 +16,6 @@ func DivisorsCount(n int64) int64 {
 }
 
 func DivisorSum(n int64) int64 {
-	if n == 1 {
-		return 1
-	}
 	var sum int64 = 1
 	var k int64 = n
 
