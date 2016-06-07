@@ -29,4 +29,19 @@ var _ = Describe("Prime", func() {
 			})
 		})
 	})
+
+	Describe("IsPrime", func() {
+		Context("For n is prime or not prime", func() {
+			It("correctly point out", func() {
+				Ω(prime.IsPrime(2)).To(BeTrue())
+				Ω(prime.IsPrime(3)).To(BeTrue())
+				Ω(prime.IsPrime(324292)).To(BeFalse())
+				Ω(prime.IsPrime(433)).To(BeTrue())
+				Ω(prime.IsPrime(429)).To(BeFalse())
+				Ω(prime.IsPrime(-4)).To(BeFalse())
+				Ω(prime.IsPrime(0)).To(BeFalse())
+				Ω(prime.IsPrime(1)).To(BeFalse())
+			})
+		})
+	})
 })

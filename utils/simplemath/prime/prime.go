@@ -30,3 +30,27 @@ func GetPrimesUnder(n int64) []int64 {
 
 	return primes
 }
+
+/*
+	Prime is odd except 2
+	Prime is dividable only by 1 and 0
+	Prime is possitive
+	Prime > 1
+*/
+func IsPrime(n int64) bool {
+	if n < 2 {
+		return false
+	}
+
+	if n == 2 {
+		return true
+	}
+
+	for i := int64(3); i*i < n; i += 2 {
+		if n%i == 0 {
+			return false
+		}
+	}
+
+	return true
+}

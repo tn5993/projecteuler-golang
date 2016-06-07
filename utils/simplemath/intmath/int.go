@@ -28,6 +28,14 @@ func Abs(a int) int {
 	return a
 }
 
+func Abs64(a int64) int64 {
+	if a < 0 {
+		a = (-1) * a
+	}
+
+	return a
+}
+
 func Factorial(n int64) (int64, error) {
 	if n < 0 {
 		return -1, errors.New("Factorial does not apply for negative number")
