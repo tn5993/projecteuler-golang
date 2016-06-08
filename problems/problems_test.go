@@ -9,9 +9,8 @@ import (
 var _ = Describe("Src/Github.Com/Tn5993/Projecteuler/Problems/Problems", func() {
 	Context("problem 28", func() {
 		It("should return the following number for problem 28", func() {
-			result, err := SolveProblem28(1001)
-			Ω(err).ToNot(HaveOccurred())
-			Ω(result).To(Equal(669171001))
+			result := NewProblem28(1001).Solve()
+			Ω(result).To(Equal(int64(669171001)))
 		})
 	})
 })
